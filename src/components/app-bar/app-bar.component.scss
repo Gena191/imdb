@@ -1,0 +1,28 @@
+@import "../../common/styles/common";
+form header div{
+  background-color: black;
+
+  div div  {
+    background-color: $hell-background-color;
+border-radius: 4px;
+
+  }
+  .css-96uuyl {
+    margin-right: 0;
+  }
+
+  button{
+    background-color: $hell-background-color;
+  }
+  .css-sghohy-MuiButtonBase-root-MuiButton-root {
+    background-color: $hell-background-color;
+    height: 37px;
+    margin-left: 10px;
+    .css-9tj150-MuiButton-endIcon {
+
+      margin-left:0;
+
+    }
+  }
+
+}

@@ -1,0 +1,43 @@
+$shadow-color: #black;
+@import "../../common/styles/common";
+
+.back-film-list0 {
+  display: flex;
+  justify-content: center;
+
+  .back-film-list {
+    padding: 15px;
+    margin-top: 2rem;
+    background: $background-color;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: $shadow;
+    margin-bottom: 2rem;
+
+    .headlines {
+      @extend %head
+
+    }
+
+    .film-list-search {
+      display: flex;
+      justify-content: center;
+
+      .film-list-search2 {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 1410px;
+
+        .film-card1 {
+          padding: 1rem;
+
+        }
+      }
+    }
+  }
+}
+
+
+

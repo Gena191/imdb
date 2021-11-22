@@ -1,0 +1,78 @@
+@import "../../common/styles/common";
+
+.headlines {
+  @extend %head
+
+}
+.actor-page {
+  justify-content: center;
+  display: flex;
+
+  .actor-page-2 {
+    padding: 15px;
+    color: white;
+    margin-top: 2rem;
+    background: $background-color;
+    width: 80%;
+    border-radius: 20px;
+    box-shadow:$shadow;
+    margin-bottom: 2rem;
+
+    .image-summary {
+      display: flex;
+      flex-direction: row;
+
+      .image {
+        border-radius: 8px;
+        height: 500px;
+        box-shadow: $shadow;
+
+      }
+
+      .summary {
+        margin-left: 1rem;
+        width: 100%;
+        height: 500px;
+        overflow: auto;
+
+
+      }
+
+      .bio {
+
+      }
+      .known-for{
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+
+    .known-for {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+
+      .film-card1 {
+        padding: 1rem;
+
+      }
+
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
