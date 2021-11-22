@@ -20,7 +20,6 @@ const App: React.FC = () => {
             <div className='App'>
                 <>
                     <Router>
-
                         <AppBarComponent setTt={setTt}/>
                         <Switch>
                             <Route exact path="/">
