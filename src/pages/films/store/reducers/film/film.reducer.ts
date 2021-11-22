@@ -8,7 +8,6 @@ import {
     IFilmInfoColl, FilmPageAction
 } from './types'
 
-
 const defaultState :IFilmInfoColl= {
     poster:  "",
     filminfo: {},
@@ -16,9 +15,6 @@ const defaultState :IFilmInfoColl= {
     filmratings: {},
     filmimages:[],
 }
-
-
-
 
 export const FilmReducer = (state = defaultState, action:FilmPageAction):IFilmInfoColl => {
     switch (action.type) {

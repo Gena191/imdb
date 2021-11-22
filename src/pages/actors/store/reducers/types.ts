@@ -1,13 +1,11 @@
 //a reducer
-
-
 export const ADD_ACTOR_INFO="ADD_ACTOR_INFO"
 export const DROP_ACTOR_INFO="DROP_ACTOR_INFO"
+
 //interface reducer
 export interface IActor{
     actorinfo:IActorinfo
 }
-
 export interface IActorinfo{
     id?:string
     name?:string
@@ -38,9 +36,6 @@ export interface IDropActorsAction{
 
 }
 export type ActorPageAction = IDropActorsAction | IActorsAction
-
-
-
 
 //a watcher
 export const LOAD_ACTOR_INFO="LOAD_ACTOR_INFO"

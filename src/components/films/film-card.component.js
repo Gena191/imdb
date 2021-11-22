@@ -4,28 +4,17 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {CardActionArea} from '@mui/material';
-import {useDispatch} from "react-redux";
-import { useHistory } from "react-router-dom";
-import {addFilmInfo} from "../../pages/films/store/saga/film/film.actions";
-
+import {useHistory} from "react-router-dom";
 
 const FilmCardComponent = ({film}) => {
     let history = useHistory()
-
-
-
     const getFilmPage = () => {
-
-localStorage.setItem('filmId',film.id)
-
-
+        localStorage.setItem('filmId', film.id)
         history.push("/FilmPage")
     }
 
     return (
-
-
-        <Card sx={{height: 600, width: 250}} onClick={getFilmPage}  >
+        <Card sx={{height: 600, width: 250}} onClick={getFilmPage}>
             <CardActionArea>
 
                 {film.image ?
@@ -55,11 +44,13 @@ localStorage.setItem('filmId',film.id)
                         <></>
 
                     }
+
                     {film.title &&
-                        <Typography gutterBottom variant="h5" component="div">
-                            <div className='items-text'>{film.title}</div>
-                        </Typography>
+                    <Typography gutterBottom variant="h5" component="div">
+                        <div className='items-text'>{film.title}</div>
+                    </Typography>
                     }
+
                     {film.year ?
                         <Typography variant="body2" color="text.secondary">
                             Year: {film.year}
@@ -67,6 +58,7 @@ localStorage.setItem('filmId',film.id)
                         :
                         <></>
                     }
+
                     {film.releaseState ?
                         <Typography variant="body2" color="text.secondary">
                             Release state: {film.releaseState}
@@ -74,6 +66,7 @@ localStorage.setItem('filmId',film.id)
                         :
                         <></>
                     }
+
                     {film.runtimeMins ?
                         <Typography variant="body2" color="text.secondary">
                             Running time in minutes : {film.runtimeMins}
@@ -81,7 +74,6 @@ localStorage.setItem('filmId',film.id)
                         :
                         <></>
                     }
-
 
                     {film.description ?
                         <Typography variant="body2" color="text.secondary">
@@ -91,20 +83,17 @@ localStorage.setItem('filmId',film.id)
                         <></>
 
                     }
+
                     {film.role ?
                         <Typography variant="body2" color="text.secondary">
                             Role: {film.role}
                         </Typography>
                         :
                         <></>
-
                     }
-
-
                 </CardContent>
             </CardActionArea>
         </Card>
-
 
     );
 }

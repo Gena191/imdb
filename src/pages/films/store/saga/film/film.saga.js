@@ -1,6 +1,4 @@
 import {put, takeEvery, call, fork} from "redux-saga/effects"
-
-
 import {
     ADD_FILM_POSTER,
     ADD_FILM_TRAILER,
@@ -9,7 +7,6 @@ import {
     ADD_FILM_INFO,
     LOAD_FILM_INFO,
 } from '../../reducers/film/types'
-
 import {
     getPostersRatingsTrailer,
     getFilmInfo,
@@ -17,12 +14,7 @@ import {
 } from "./film.request";
 import {editLink, pushImages} from "../../utils/film.utils";
 
-
-
-
 export function* loadPosters(action) {
-
-
 
     try {
         const filmId = action.payload.filmId
@@ -34,8 +26,6 @@ export function* loadPosters(action) {
 }
 
 export function* loadFilmInfo(action) {
-
-
     try {
         const filmId = action.payload.filmId
         const info = yield call(getFilmInfo, filmId);
@@ -46,7 +36,6 @@ export function* loadFilmInfo(action) {
 }
 
 export function* loadRatings(action) {
-
 
     try {
         const filmId = action.payload.filmId
@@ -59,7 +48,6 @@ export function* loadRatings(action) {
 
 export function* loadImages(action) {
 
-
     try {
         const filmId = action.payload.filmId
         const images = yield call(getFilmImages, filmId);
@@ -70,7 +58,6 @@ export function* loadImages(action) {
 }
 
 export function* loadYouTubeTrailer(action) {
-
 
     try {
         const filmId = action.payload.filmId
@@ -94,6 +81,7 @@ function* loaderFilmInfo(action) {
 
 
 export function* loadFilmPage() {
+
      yield takeEvery(LOAD_FILM_INFO, loaderFilmInfo)
 
 }

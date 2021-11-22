@@ -1,10 +1,8 @@
 import {ActorPageAction, ADD_ACTOR_INFO, DROP_ACTOR_INFO, IActor, } from "./types"
 
-
 const defaultState: IActor = {
     actorinfo:{}
 }
-
 
 export const ActorPageReducer = (state = defaultState, action: ActorPageAction):IActor => {
 

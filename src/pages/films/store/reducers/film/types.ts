@@ -68,8 +68,6 @@ export interface IDropFilm{
 }
 export type FilmPageAction = IPosterAction | IFilmInfoAction | IFilmTrailerAction | IFilmRatingsAction | IFilmImagesAction | IDropFilm
 
-
-
 //h-f watcher
 export const LOAD_FILM_INFO = "LOAD_HOME_FILMS"
 

@@ -20,13 +20,10 @@ import {SvgIcon} from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {useState} from "react";
-
 import {useDispatch} from "react-redux";
-
 import {useHistory} from "react-router-dom";
 import "./app-bar.component.scss"
 import {addFilms} from "../../pages/films/store/saga/home-films/home-films.actions";
-
 
 const Search = styled('div')(({theme}) => ({
     position: 'relative',
@@ -78,7 +75,6 @@ function HomeIcon(props) {
 }
 
 HomeIcon.propTypes = {sx: PropTypes.shape({color: PropTypes.any})};
-
 
 const AppBarComponent = ({setTt}) => {
 let history= useHistory()
@@ -190,7 +186,6 @@ let history= useHistory()
         </Menu>
     );
 
-
     return (
         <form onSubmit={submit}>
             <Box sx={{flexGrow: 1}}>
@@ -232,11 +227,9 @@ let history= useHistory()
                         <Box sx={{flexGrow: 1}}/>
                         <Box sx={{display: {xs: 'none', md: 'flex'}}}>
 
-
                             <Button onClick={()=>history.goBack()} variant="contained" endIcon={<ArrowBackIosIcon sx={{size: 500}}/>}/>
                             <Button onClick={goHome} variant="contained" endIcon={<HomeIcon sx={{size: 500}}/>}/>
                             <Button onClick={()=>history.goForward()} variant="contained" endIcon={<ArrowForwardIosIcon sx={{size: 500}}/>}/>
-
 
                         </Box>
                         <Box sx={{display: {xs: 'flex', md: 'none'}}}>

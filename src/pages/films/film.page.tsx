@@ -1,25 +1,15 @@
 import React, {useEffect} from 'react';
-
 import './film.page.scss';
 import SimpleImageSlider from "react-simple-image-slider";
 import ActorCardComponent from "../../components/actor-card/actor-card.component";
 import {useTypedSelector} from "../../store/useTypedSelector"
-import { IFilmInfo, IFilmRatings} from "./store/reducers/film/types";
+import {IFilmInfo, IFilmRatings} from "./store/reducers/film/types";
 import {useDispatch} from "react-redux";
 import {addFilmInfo} from "./store/saga/film/film.actions";
 
-
-
-
-
-
-
-
 const FilmPage: React.FC = () => {
 
-    const dispatch=useDispatch()
-
-
+    const dispatch = useDispatch()
     useEffect(() => {
 
         dispatch(addFilmInfo(localStorage.getItem('filmId')))
@@ -40,8 +30,6 @@ const FilmPage: React.FC = () => {
 
     const filmimages: { url: string }[] = useTypedSelector(state => state.filmPage.filmimages)
 
-
-
     // @ts-ignore
     // @ts-ignore
     return (
@@ -52,12 +40,9 @@ const FilmPage: React.FC = () => {
                         <img className="poster"
                              src={poster}
                         />
-
-
                     </div>
                     {filminfo.plot === "" ?
                         <div className="plot">
-
                             <> <h1 className='headlines'>No plot:</h1></>
                         </div>
                         :
@@ -67,7 +52,6 @@ const FilmPage: React.FC = () => {
                         </div>
                     }
                 </div>
-
                 {Object.keys(filminfo).length === 0 ?
                     <></>
                     :
@@ -96,26 +80,31 @@ const FilmPage: React.FC = () => {
                                 :
                                 <p><b>imDb:</b> {filmratings.imDb} </p>
                             }
+
                             {filmratings.metacritic === "" ?
                                 <></>
                                 :
                                 <p><b>metacritic:</b> {filmratings.metacritic} </p>
                             }
+
                             {filmratings.theMovieDb === "" ?
                                 <></>
                                 :
                                 <p><b>theMovieDb:</b> {filmratings.theMovieDb} </p>
                             }
+
                             {filmratings.rottenTomatoes === "" ?
                                 <></>
                                 :
                                 <p><b>rottenTomatoes:</b> {filmratings.rottenTomatoes} </p>
                             }
+
                             {filmratings.tV_com === "" ?
                                 <></>
                                 :
                                 <p><b>tV_com:</b> {filmratings.tV_com} </p>
                             }
+
                             {filmratings.filmAffinity === "" ?
                                 <></>
                                 :
@@ -125,16 +114,13 @@ const FilmPage: React.FC = () => {
                     </div>
                 }
 
-
                 {!filmimages.length ?
                     <></>
                     :
                     <div>
                         <h1 className='headlines'>Photo from the film:</h1>
                         <div className='image-slider'>
-
                             <div className='slider'>
-
                                 <SimpleImageSlider
                                     // className='slider'
                                     width={1000}
@@ -147,9 +133,7 @@ const FilmPage: React.FC = () => {
                             </div>
                         </div>
                     </div>
-
                 }
-
 
                 {filmtrailer === "" ?
                     <></>
@@ -157,44 +141,33 @@ const FilmPage: React.FC = () => {
                     <div>
                         <h1 className='headlines'>Trailer:</h1>
                         <div className='film-trailer'>
-
                             < iframe className='film-trailer-video' src={`https://www.youtube.com/embed/${filmtrailer}`}
                                      title="YouTube video player" frameBorder="0"
                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                      allowFullScreen/>
                         </div>
                     </div>
-
                 }
 
-                {
-                    !filminfo.actorList ?
-                        <></>
-                        :
-                        <div>
-                            <h1 className='headlines'>Actors:</h1>
-                            <div className="actor-list">
-                                {filminfo.actorList.map(actor => {
-                                        if (actor.image !== "https://imdb-api.com/images/original/nopicture.jpg")
-                                            return (
-
-
-                                                <div className="actor-card"><ActorCardComponent actor={actor}/></div>
-
-                                            )
-                                    }
-                                )
+                {!filminfo.actorList ?
+                    <></>
+                    :
+                    <div>
+                        <h1 className='headlines'>Actors:</h1>
+                        <div className="actor-list">
+                            {filminfo.actorList.map(actor => {
+                                    if (actor.image !== "https://imdb-api.com/images/original/nopicture.jpg")
+                                        return (
+                                            <div className="actor-card"><ActorCardComponent actor={actor}/></div>
+                                        )
                                 }
-                            </div>
+                            )
+                            }
                         </div>
+                    </div>
                 }
-
-
             </div>
         </div>
-
     );
-
-
 }
 export default FilmPage;

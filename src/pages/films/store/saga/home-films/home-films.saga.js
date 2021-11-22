@@ -10,6 +10,7 @@ import {
 } from '../../reducers/home-films/types'
 
 export function* loadComingSoonFilm() {
+
     try{
     const comingSoon = yield call(getComingTopFilms, 'ComingSoon');
 
@@ -20,6 +21,7 @@ export function* loadComingSoonFilm() {
 }
 
 export function* loadTop25Film() {
+
     try{
     const top25 = yield call(getComingTopFilms, 'Top250Movies');
 
@@ -31,14 +33,13 @@ export function* loadTop25Film() {
 
 
 function* loaderHomePage() {
-    yield fork(loadComingSoonFilm);
 
-    // yield fork(loadTop25Film);
+    yield fork(loadComingSoonFilm);
+    yield fork(loadTop25Film);
 
 }
 
 export function* loadSearchFilms(action) {
-
 
     try {
         const tittle= action.payload.tittle
@@ -50,6 +51,7 @@ export function* loadSearchFilms(action) {
     }
 }
 export function* loadHomePage() {
+
     yield takeEvery(LOAD_HOME_FILMS,loaderHomePage)
     yield takeEvery(LOAD_SEARCH_RES,loadSearchFilms)
 }

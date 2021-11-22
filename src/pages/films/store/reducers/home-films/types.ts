@@ -1,6 +1,6 @@
-//h-f reducer
 import {IFilms} from "../../utils/home-films.utils";
 
+//h-f reducer
 export const ADD_FILMS = "ADD_FILMS"
 export const ADD_TOP25_FILMS ="ADD_TOP25_FILMS"
 export const ADD_COMING_SOON_FILMS ="ADD_COMING_SOON_FILMS"
@@ -27,10 +27,7 @@ export interface IFilmComingSoonAction{
     payload: IFilms[]
 }
 
-
 export type FilmAction = IFilmAction | IFilmTop25Action | IFilmComingSoonAction
-
-
 
 //h-f watcher
 export const LOAD_HOME_FILMS = "LOAD_HOME_FILMS"

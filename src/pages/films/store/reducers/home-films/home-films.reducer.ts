@@ -1,17 +1,11 @@
 import {ADD_FILMS, ADD_TOP25_FILMS, ADD_COMING_SOON_FILMS, IFilmColl, FilmAction,} from './types'
 
-
-
-
-
 const defaultState:IFilmColl = {
     films:[],
     top25films: [],
     comingsoonfilms: [],
 
 }
-
-
 
 export const HomeFilmsReducer = (state = defaultState, action:FilmAction):IFilmColl => {
     switch (action.type) {
